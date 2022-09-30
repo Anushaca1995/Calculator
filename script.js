@@ -23,6 +23,12 @@ const calcObj = {
         this.screenMemory = '';
         document.querySelector('.calcans').value = '';
     },
+    percent: function (){
+        let perct=(this.screenMemory)/100;
+        console.log("Percentage="+perct+","+this.screenMemory);
+        document.querySelector('.calcans').value = perct;
+        this.screenMemory = perct;
+    },
     result: function () {
         let result = 0;
         this.memory.push(this.screenMemory);
@@ -69,7 +75,7 @@ const calcObj = {
                 document.querySelector('.calcans').value = result;
                 this.screenMemory = result;
                 console.log("Division=", result);
-            } 
+            }
         }
         this.memory = [];
         console.log("out for" + this.memory);
