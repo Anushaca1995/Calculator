@@ -22,7 +22,25 @@ const calcObj = {
         this.memory=[];
         this.screenMemory='';
         document.querySelector('.calcans').innerHTML ='';
+    },
+    result: function(){
+        let result=0;
+        this.memory.push(this.screenMemory);
+        console.log("Inside Result"+this.screenMemory+" Memory="+this.memory);
+        for(let index=0;index<this.memory.length;index++){
+            console.log(this.memory+"==="+this.symbols[0]);
+            if((this.operator===this.symbols[0]) && (this.operator!=",")){
+                let add=Number(this.memory[index]);
+                result+=add;
+                document.querySelector('.calcans').value =result;
+                this.screenMemory=result;
+                console.log("Addition=",result);
+            }
+        }
+        this.memory=[];
+        console.log("out for"+this.memory);
+        console.log("out out for"+this.memory);
+
     }
-    
 
 }
