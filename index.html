@@ -34,12 +34,12 @@
             <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[0])" value="+">
             <br> <br>
             <input type="button" onclick="calcObj.inputs(0)" class="btZero" value="0">
-            <input type="button" value=".">
-            <input type="button" value="%">
+            <input type="button" onclick="calcObj.inputs('.')" value=".">
+            <input type="button" onclick="calcObj.percent();" value="%">
             <input type="button" onclick="calcObj.result();" value="=">
             <br>            
             <input type="button" class="clear" onclick="calcObj.clear();" value="Clear All">
-            <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[4])" class="division" value="/">
+            <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[3])" class="division" value="/">
             <br>
         </form>
     </div>
