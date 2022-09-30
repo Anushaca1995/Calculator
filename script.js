@@ -17,6 +17,12 @@ const calcObj = {
         this.operator=symbol;
         console.log('screen memory now:', this.screenMemory);
         console.log("memory=",this.memory);
+    },
+    clear: function(){
+        this.memory=[];
+        this.screenMemory='';
+        document.querySelector('.calcans').innerHTML ='';
     }
+    
 
 }
