@@ -1,5 +1,5 @@
 const calcObj = {
-    symbols: ["+", "-", "*", "=", "/"],
+    symbols: ["+", "-", "*", "/", "%"],
     memory: [],
     operator: [],
     screenMemory: '',
@@ -31,7 +31,11 @@ const calcObj = {
             console.log(this.memory + "===" + this.symbols[0]);
             if ((this.operator === this.symbols[0])) {
                 let add = Number(this.memory[index]);
-                result += add;
+                if (index==0) {
+                    result = add;
+                } else {
+                    result = result+add;
+                }
                 document.querySelector('.calcans').value = result;
                 this.screenMemory = result;
                 console.log("Addition=", result);
@@ -41,6 +45,26 @@ const calcObj = {
                     result = sub;
                 } else {
                     result = result-sub;
+                }
+                document.querySelector('.calcans').value = result;
+                this.screenMemory = result;
+                console.log("Subtraction=", result);
+            } else if ((this.operator === this.symbols[2])) {
+                let mul = Number(this.memory[index]);
+                if (index==0) {
+                    result = mul;
+                } else {
+                    result = result*mul;
+                }
+                document.querySelector('.calcans').value = result;
+                this.screenMemory = result;
+                console.log("Subtraction=", result);
+            } else if ((this.operator === this.symbols[3])) {
+                let mul = Number(this.memory[index]);
+                if (index==0) {
+                    result = mul;
+                } else {
+                    result = result/mul;
                 }
                 document.querySelector('.calcans').value = result;
                 this.screenMemory = result;
