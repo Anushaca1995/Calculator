@@ -1,46 +1,55 @@
 const calcObj = {
-    symbols : ["+","-","*","=","/"],
+    symbols: ["+", "-", "*", "=", "/"],
     memory: [],
     operator: [],
     screenMemory: '',
-    inputs: function (num){
-        document.querySelector('.calcans').innerHTML +=num;
-        document.querySelector('.calcans').value +=num;
-        this.screenMemory += ''+num;
+    inputs: function (num) {
+        document.querySelector('.calcans').innerHTML += num;
+        document.querySelector('.calcans').value += num;
+        this.screenMemory += '' + num;
         console.log('Value of screen memory:', this.screenMemory);
     },
-    keySymbols: function (symbol){
-        document.querySelector('.calcans').innerHTML +=symbol;
-        document.querySelector('.calcans').value +=symbol;
+    keySymbols: function (symbol) {
+        document.querySelector('.calcans').innerHTML += symbol;
+        document.querySelector('.calcans').value += symbol;
         this.memory.push(this.screenMemory);
-        this.screenMemory='';
-        this.operator=symbol;
+        this.screenMemory = '';
+        this.operator = symbol;
         console.log('screen memory now:', this.screenMemory);
-        console.log("memory=",this.memory);
+        console.log("memory=", this.memory);
     },
-    clear: function(){
-        this.memory=[];
-        this.screenMemory='';
-        document.querySelector('.calcans').innerHTML ='';
+    clear: function () {
+        this.memory = [];
+        this.screenMemory = '';
+        document.querySelector('.calcans').value = '';
     },
-    result: function(){
-        let result=0;
+    result: function () {
+        let result = 0;
         this.memory.push(this.screenMemory);
-        console.log("Inside Result"+this.screenMemory+" Memory="+this.memory);
-        for(let index=0;index<this.memory.length;index++){
-            console.log(this.memory+"==="+this.symbols[0]);
-            if((this.operator===this.symbols[0]) && (this.operator!=",")){
-                let add=Number(this.memory[index]);
-                result+=add;
-                document.querySelector('.calcans').value =result;
-                this.screenMemory=result;
-                console.log("Addition=",result);
-            }
+        console.log("Inside Result" + this.screenMemory + " Memory=" + this.memory);
+        for (let index = 0; index < this.memory.length; index++) {
+            console.log(this.memory + "===" + this.symbols[0]);
+            if ((this.operator === this.symbols[0])) {
+                let add = Number(this.memory[index]);
+                result += add;
+                document.querySelector('.calcans').value = result;
+                this.screenMemory = result;
+                console.log("Addition=", result);
+            } else if ((this.operator === this.symbols[1])) {
+                let sub = Number(this.memory[index]);
+                if (index==0) {
+                    result = sub;
+                } else {
+                    result = result-sub;
+                }
+                document.querySelector('.calcans').value = result;
+                this.screenMemory = result;
+                console.log("Subtraction=", result);
+            } 
         }
-        this.memory=[];
-        console.log("out for"+this.memory);
-        console.log("out out for"+this.memory);
-
+        this.memory = [];
+        console.log("out for" + this.memory);
+        console.log("out out for" + this.memory);
     }
 
 }
