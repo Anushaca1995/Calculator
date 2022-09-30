@@ -58,7 +58,7 @@ const calcObj = {
                 }
                 document.querySelector('.calcans').value = result;
                 this.screenMemory = result;
-                console.log("Subtraction=", result);
+                console.log("Multiplication=", result);
             } else if ((this.operator === this.symbols[3])) {
                 let mul = Number(this.memory[index]);
                 if (index==0) {
@@ -68,7 +68,7 @@ const calcObj = {
                 }
                 document.querySelector('.calcans').value = result;
                 this.screenMemory = result;
-                console.log("Subtraction=", result);
+                console.log("Division=", result);
             } 
         }
         this.memory = [];
