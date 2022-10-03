@@ -3,17 +3,15 @@
   padding: auto;
 }
 
-h1 {
+body {
+  background-color: black;
+}
+body h1 {
   text-align: center;
   color: antiquewhite;
   font-size: 50px;
 }
-
-body {
-  background-color: black;
-}
-
-.form-div {
+body .form-div {
   width: 350px;
   margin: auto;
   padding: 20px;
@@ -22,22 +20,27 @@ body {
   display: flex;
   justify-content: space-around;
 }
-
-input {
+body input {
   background-color: rgb(30, 1, 14);
   color: white;
   border: 3px solid gray;
   border-radius: 5px;
-  padding: 20px;
+  padding: 30px;
   font-size: 15px;
   text-align: center;
 }
-
-#calc-answer {
+body #calc-answer {
   width: 250px;
   border: 5px solid black;
   border-radius: 3px;
   padding: 20px;
   margin: auto;
   display: flex;
+}
+body .clear {
+  width: 235px;
+  margin-top: 15px;
+}
+body .division {
+  margin-top: 15px;
 }/*# sourceMappingURL=style.css.map */
