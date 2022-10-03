@@ -1,86 +1,82 @@
+const symbols= ["+", "-", "*", "/", "%"];
+let  memory= [];
+let operator= [];
+let screenMemory= '';
 const getNumber = (num) => {
     document.querySelector('.calcans').value += num;
-    calcObj.screenMemory += '' + num;
-    console.log('Value of screen memory:', calcObj.screenMemory);
+    screenMemory += '' + num;
+    console.log('Value of screen memory:', screenMemory);
 
 }
 const getSymbol = (symbol) => {
     document.querySelector('.calcans').value += symbol;
-    calcObj.memory.push(calcObj.screenMemory);
-    calcObj.screenMemory = '';
-    calcObj.operator = symbol;
-    console.log('screen memory now:', calcObj.screenMemory);
-    console.log("memory=", calcObj.memory);
+    memory.push(screenMemory);
+    screenMemory = '';
+    operator = symbol;
+    console.log('screen memory now:', screenMemory);
+    console.log("memory=", memory);
 }
 const getClear = () => {
-    calcObj.memory = [];
-    calcObj.screenMemory = '';
+    memory = [];
+    screenMemory = '';
     document.querySelector('.calcans').value = '';
 }
 
 const getPercent = () =>{
-    let perct=(calcObj.screenMemory)/100;
-    console.log("Percentage="+perct+","+calcObj.screenMemory);
+    let perct=(screenMemory)/100;
+    console.log("Percentage="+perct+","+screenMemory);
     document.querySelector('.calcans').value = perct;
-    calcObj.screenMemory = perct;
+    screenMemory = perct;
 }
 const getResult = () =>{
     let result = 0;
-        calcObj.memory.push(calcObj.screenMemory);
-        console.log("Inside Result" + calcObj.screenMemory + " Memory=" + calcObj.memory);
-        for (let index = 0; index < calcObj.memory.length; index++) {
-            console.log(calcObj.memory + "===" + calcObj.symbols[0]);
-            if ((calcObj.operator === calcObj.symbols[0])) {
-                let add = Number(calcObj.memory[index]);
+        memory.push(screenMemory);
+        console.log("Inside Result" + screenMemory + " Memory=" + memory);
+        for (let index = 0; index < memory.length; index++) {
+            console.log(memory + "===" + symbols[0]);
+            if ((operator === symbols[0])) {
+                let add = Number(memory[index]);
                 if (index==0) {
                     result = add;
                 } else {
                     result = result+add;
                 }
                 document.querySelector('.calcans').value = result;
-                calcObj.screenMemory = result;
+                screenMemory = result;
                 console.log("Addition=", result);
-            } else if ((calcObj.operator === calcObj.symbols[1])) {
-                let sub = Number(calcObj.memory[index]);
+            } else if ((operator === symbols[1])) {
+                let sub = Number(memory[index]);
                 if (index==0) {
                     result = sub;
                 } else {
                     result = result-sub;
                 }
                 document.querySelector('.calcans').value = result;
-                calcObj.screenMemory = result;
+                screenMemory = result;
                 console.log("Subtraction=", result);
-            } else if ((calcObj.operator === calcObj.symbols[2])) {
-                let mul = Number(calcObj.memory[index]);
+            } else if ((operator === symbols[2])) {
+                let mul = Number(memory[index]);
                 if (index==0) {
                     result = mul;
                 } else {
                     result = result*mul;
                 }
                 document.querySelector('.calcans').value = result;
-                calcObj.screenMemory = result;
+                screenMemory = result;
                 console.log("Multiplication=", result);
-            } else if ((calcObj.operator === calcObj.symbols[3])) {
-                let mul = Number(calcObj.memory[index]);
+            } else if ((operator === symbols[3])) {
+                let mul = Number(memory[index]);
                 if (index==0) {
                     result = mul;
                 } else {
                     result = result/mul;
                 }
                 document.querySelector('.calcans').value = result;
-                calcObj.screenMemory = result;
+                screenMemory = result;
                 console.log("Division=", result);
             }
         }
-        calcObj.memory = [];
-        console.log("out for" + calcObj.memory);
-        console.log("out out for" + calcObj.memory);
+        memory = [];
     
 }
 
-const calcObj = {
-    symbols: ["+", "-", "*", "/", "%"],
-    memory: [],
-    operator: [],
-    screenMemory: ''
-};
