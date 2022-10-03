@@ -1,36 +1,31 @@
-const calcObj = {
-    symbols: ["+", "-", "*", "/", "%"],
-    memory: [],
-    operator: [],
-    screenMemory: '',
-    inputs: (num) => { 
-        document.querySelector('.calcans').innerHTML += num;
-        document.querySelector('.calcans').value += num;
-        calcObj.screenMemory += '' + num;
-        console.log('Value of screen memory:', calcObj.screenMemory);
-    },
-    keySymbols:  (symbol) => {
-        document.querySelector('.calcans').innerHTML += symbol;
-        document.querySelector('.calcans').value += symbol;
-        calcObj.memory.push(calcObj.screenMemory);
-        calcObj.screenMemory = '';
-        calcObj.operator = symbol;
-        console.log('screen memory now:', calcObj.screenMemory);
-        console.log("memory=", calcObj.memory);
-    },
-    clear: () => {
-        calcObj.memory = [];
-        calcObj.screenMemory = '';
-        document.querySelector('.calcans').value = '';
-    },
-    percent: () =>{
-        let perct=(calcObj.screenMemory)/100;
-        console.log("Percentage="+perct+","+calcObj.screenMemory);
-        document.querySelector('.calcans').value = perct;
-        calcObj.screenMemory = perct;
-    },
-    result: ()=> {
-        let result = 0;
+const getNumber = (num) => {
+    document.querySelector('.calcans').value += num;
+    calcObj.screenMemory += '' + num;
+    console.log('Value of screen memory:', calcObj.screenMemory);
+
+}
+const getSymbol = (symbol) => {
+    document.querySelector('.calcans').value += symbol;
+    calcObj.memory.push(calcObj.screenMemory);
+    calcObj.screenMemory = '';
+    calcObj.operator = symbol;
+    console.log('screen memory now:', calcObj.screenMemory);
+    console.log("memory=", calcObj.memory);
+}
+const getClear = () => {
+    calcObj.memory = [];
+    calcObj.screenMemory = '';
+    document.querySelector('.calcans').value = '';
+}
+
+const getPercent = () =>{
+    let perct=(calcObj.screenMemory)/100;
+    console.log("Percentage="+perct+","+calcObj.screenMemory);
+    document.querySelector('.calcans').value = perct;
+    calcObj.screenMemory = perct;
+}
+const getResult = () =>{
+    let result = 0;
         calcObj.memory.push(calcObj.screenMemory);
         console.log("Inside Result" + calcObj.screenMemory + " Memory=" + calcObj.memory);
         for (let index = 0; index < calcObj.memory.length; index++) {
@@ -80,6 +75,12 @@ const calcObj = {
         calcObj.memory = [];
         console.log("out for" + calcObj.memory);
         console.log("out out for" + calcObj.memory);
-    }
-
+    
 }
+
+const calcObj = {
+    symbols: ["+", "-", "*", "/", "%"],
+    memory: [],
+    operator: [],
+    screenMemory: ''
+};

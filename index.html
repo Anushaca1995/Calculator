@@ -17,29 +17,29 @@
         <form name="calc-form" class="keys">
             <input class="calcans" readonly="number" type="text" name="answer"> 
             <br> <br>
-            <input class="input-button" type="button" onclick="calcObj.inputs(7)" value="7">
-            <input type="button" onclick="calcObj.inputs(8)" value="8">
-            <input type="button" onclick="calcObj.inputs(9)" value="9">
-            <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[2])" value="x">
+            <input class="input-button" onclick="getNumber(7)" type="button" value="7">
+            <input type="button" onclick="getNumber(8)" value="8">
+            <input type="button" onclick="getNumber(9)" value="9">
+            <input type="button" onclick="getSymbol((calcObj.symbols[2]))" value="x">
             <br> <br>
-            <input type="button" onclick="calcObj.inputs(4)" value="4">
-            <input type="button" onclick="calcObj.inputs(5)" value="5">
-            <input type="button" onclick="calcObj.inputs(6)" value="6">
-            <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[1])" value="- ">
+            <input type="button" onclick="getNumber(4)" value="4">
+            <input type="button" onclick="getNumber(5)" value="5">
+            <input type="button" onclick="getNumber(6)" value="6">
+            <input type="button" onclick="getSymbol((calcObj.symbols[1]))" value="- ">
             <br> <br>
 
-            <input type="button" onclick="calcObj.inputs(1)" value="1">
-            <input type="button" onclick="calcObj.inputs(2)" value="2">
-            <input type="button" onclick="calcObj.inputs(3)" value="3">
-            <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[0])" value="+">
+            <input type="button" onclick="getNumber(1)" value="1">
+            <input type="button" onclick="getNumber(2)" value="2">
+            <input type="button" onclick="getNumber(3)" value="3">
+            <input type="button" onclick="getSymbol((calcObj.symbols[0]))" value="+">
             <br> <br>
-            <input type="button" onclick="calcObj.inputs(0)" class="btZero" value="0">
-            <input type="button" onclick="calcObj.inputs('.')" value=".">
-            <input type="button" onclick="calcObj.percent();" value="%">
-            <input type="button" onclick="calcObj.result();" value="=">
+            <input type="button" onclick="getNumber(8)" class="btZero" value="0">
+            <input type="button" onclick="getNumber('.')" value=".">
+            <input type="button" onclick="getPercent();" value="%">
+            <input type="button" onclick="getResult();" value="=">
             <br>            
-            <input type="button" class="clear" onclick="calcObj.clear();" value="Clear All">
-            <input type="button" onclick="calcObj.keySymbols(calcObj.symbols[3])" class="division" value="/">
+            <input type="button" class="clear" onclick="getClear();" value="Clear All">
+            <input type="button" onclick="getSymbol(calcObj.symbols[3])" class="division" value="/">
             <br>
         </form>
     </div>
