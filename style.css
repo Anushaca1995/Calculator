@@ -4,7 +4,9 @@
 }
 
 body {
-  background-color: black;
+  background: url("./images/bgimage.jpg");
+  background-repeat: no-repeat;
+  background-size: 2000px 1200px;
 }
 body h1 {
   text-align: center;
@@ -37,17 +39,9 @@ body #calc-answer {
   display: flex;
 }
 body .clear {
-  width: 75%;
+  width: 235px;
   margin-top: 15px;
 }
 body .division {
   margin-top: 15px;
-}
-
-@media only screen and (max-width: 600px) {
-  #calc-answer {
-    color: aliceblue;
-    background-color: aqua;
-    width: 20px;
-  }
 }/*# sourceMappingURL=style.css.map */
