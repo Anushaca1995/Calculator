@@ -3,16 +3,30 @@ let  memory= [];
 let operator= [];
 let screenMemory= '';
 const getNumber = (num) => {
-    document.querySelector('.calcans').value += num;
-    screenMemory += '' + num;
-    console.log('Value of screen memory:', screenMemory);
+    let scrNo=document.querySelector('.calcans').value;
+    if (num=='.'){
+        let flag=screenMemory.includes('.');
+        if (!flag){
+            document.querySelector('.calcans').value += num;
+            screenMemory += '' + num;
+            console.log('Value of screen memory:', screenMemory);
+        }
+
+    } else{
+        document.querySelector('.calcans').value += num;
+        screenMemory += '' + num;
+        console.log('Value of screen memory:', screenMemory);
+    }
 
 }
 const getSymbol = (symbol) => {
     document.querySelector('.calcans').value += symbol;
     memory.push(screenMemory);
     screenMemory = '';
-    operator = symbol;
+    if (operator!=symbol){
+        operator=symbol;
+    }
+    
     console.log('screen memory now:', screenMemory);
     console.log("memory=", memory);
 }
