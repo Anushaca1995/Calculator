@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Calculator",
+  "main": "script.js",
+  "scripts": {
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anushaca1995/Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anushaca1995/Calculator/issues"
+  },
+  "homepage": "https://github.com/Anushaca1995/Calculator#readme",
+  "devDependencies": {
+    "cypress": "^10.10.0"
+  }
+}

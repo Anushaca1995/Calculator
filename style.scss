@@ -1,25 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 * {
     margin: auto;
     padding: auto;
 }
 
 body {
-    background: url('./images/bgimage.jpg');
-    background-repeat: no-repeat;
-    background-size: 2000px 1200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: bisque;
+    background: url("./images/bg2.webp") no-repeat;
     h1 {
         text-align: center;
-        color: antiquewhite;
+        color: rgb(76, 160, 169);
         font-size: 50px;
     }
     
     .form-div {
-        margin: auto;
-        padding: 20px;
-        border: 3px solid rgb(194, 78, 176);
-        border-radius: 10px;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 350px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        border: 1px solid rgba(black, 0.25);
+        box-shadow: 0px 10px 20px rgba(black, 0.25);
+        background: url("./images/bg2.jpg") no-repeat;
     }
     
     input {
@@ -27,13 +39,14 @@ body {
         color: white;
         border: 3px solid gray;
         border-radius: 5px;
-        padding: 30px;
-        font-size: 15px;
+        padding: 20px;
+        font-size: 20px;
         text-align: center;
+        font-family: 'Libre Baskerville', serif;
     }
     
-    #calc-answer {
-        width: auto;
+    .calcans {
+        width: 200px;
         border: 5px solid black;
         border-radius: 3px;
         padding: 20px;
@@ -42,7 +55,7 @@ body {
     }
     
     .clear{
-        width: 235px;
+        width: 215px;
         margin-top: 15px;
     }
     
